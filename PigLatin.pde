@@ -34,8 +34,10 @@ public String pigLatin(String sWord)
 	else if (sWord.substring(0,2).equals("qu"))
 		return sWord.substring((2), sWord.length()) + "quay";
 
-	else if(findFirstVowel(sWord)>4) //to rule out the leading consonants, i should check that the vowel is in index 2 or higher
-		return sWord.substring(3) + sWord.substring(0,3) + "ay";  
+	else if(findFirstVowel(sWord)>0){ //to rule out the leading consonants, i should check that the vowel is in index 2 or higher
+		int n = findFirstVowel(sWord);
+		return sWord.substring(n) + sWord.substring(0,n) + "ay";  
+	}
 
 	else
 		return sWord.substring(1, sWord.length()) + sWord.substring(0,1) + "ay";
